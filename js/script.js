@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const RESULT_DISPLAY = document.querySelector("#results")
     const WIDTH = 4
     let squares = []
-    let numbers = [2,4,8,16,32,64,128,256,512,1024,2048]
     let score = 0
 
     results.innerHTML = ""
@@ -63,9 +62,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     const colorCodeEveryKey = () => {
-        // alert("BOOM")
         for(let i = 0; i < squares.length; i++) {
             squares[i].style.background = ""
+            squares[i].style.color = ""
             switch (parseInt(squares[i].innerHTML,10)) {
                 case 2:
                     squares[i].style.background = "#EEE4DA"
@@ -81,9 +80,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     break;
                 case 32:
                     squares[i].style.background = "#F77D5E"
+                    squares[i].style.color = "#fff"
                     break;
                 case 64:
                     squares[i].style.background = "#F65F3A"
+                    squares[i].style.color = "#fff"
                     break;
                 case 128:
                     squares[i].style.background = "#ECD072"
@@ -93,9 +94,11 @@ document.addEventListener("DOMContentLoaded", () => {
                     break;
                 case 512:
                     squares[i].style.background = "#ff6836"
+                    squares[i].style.color = "#fff"
                     break;
                 case 1024:
                     squares[i].style.background = "#ff3c00"
+                    squares[i].style.color = "#fff"
                     break;
                 case 2048:
                     squares[i].style.background = "#2fff00"
@@ -160,8 +163,8 @@ document.addEventListener("DOMContentLoaded", () => {
         for (let i = 0; i < 4; i++) {
             let totalOne = squares[i].innerHTML
             let totalTwo = squares[i + WIDTH].innerHTML
-            let totalThree = squares[i + (WIDTH + 2)].innerHTML
-            let totalFour = squares[i + (WIDTH + 3)].innerHTML
+            let totalThree = squares[i + (WIDTH * 2)].innerHTML
+            let totalFour = squares[i + (WIDTH * 3)].innerHTML
             let column = [parseInt(totalOne, 10), parseInt(totalTwo, 10), parseInt(totalThree, 10), parseInt(totalFour, 10)]
             let filteredColumn = column.filter(num => num)
             let missing = 4 - filteredColumn.length
@@ -170,8 +173,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
             squares[i].innerHTML = newColumn[0]
             squares[i + WIDTH].innerHTML = newColumn[1]
-            squares[i + (WIDTH + 2)].innerHTML = newColumn[2]
-            squares[i + (WIDTH + 3)].innerHTML = newColumn[3]
+            squares[i + (WIDTH * 2)].innerHTML = newColumn[2]
+            squares[i + (WIDTH * 3)].innerHTML = newColumn[3]
         }
     }
 
@@ -181,8 +184,8 @@ document.addEventListener("DOMContentLoaded", () => {
         for (let i = 0; i < 4; i++) {
             let totalOne = squares[i].innerHTML
             let totalTwo = squares[i + WIDTH].innerHTML
-            let totalThree = squares[i + (WIDTH + 2)].innerHTML
-            let totalFour = squares[i + (WIDTH + 3)].innerHTML
+            let totalThree = squares[i + (WIDTH * 2)].innerHTML
+            let totalFour = squares[i + (WIDTH * 3)].innerHTML
             let column = [parseInt(totalOne, 10), parseInt(totalTwo, 10), parseInt(totalThree, 10), parseInt(totalFour, 10)]
             let filteredColumn = column.filter(num => num)
             let missing = 4 - filteredColumn.length
@@ -191,8 +194,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
             squares[i].innerHTML = newColumn[0]
             squares[i + WIDTH].innerHTML = newColumn[1]
-            squares[i + (WIDTH + 2)].innerHTML = newColumn[2]
-            squares[i + (WIDTH + 3)].innerHTML = newColumn[3]
+            squares[i + (WIDTH * 2)].innerHTML = newColumn[2]
+            squares[i + (WIDTH * 3)].innerHTML = newColumn[3]
         }
     }
 

@@ -1,18 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap');
 
-/**
-2: #EEE4DA
-4: #EEE1C9
-8: #F3B27A
-16: #F79665
-32: #F77D5E
-64: #F65F3A
-128: #ECD072
-256: #ecd072
-512: #ff6836
-1024: #ff3c00
-2048: #2fff00
-*/
+/* .boom {
+ color: #EEE4DA;
+ color: #EEE1C9;
+ color: #F3B27A;
+ color: #F79665;
+ color: #F77D5E;
+ color: #F65F3A;
+ color: #ECD072;
+ color: #ffca1b;
+ color: #ff6836;
+ color: #ff3c00;
+ color: #2fff00;
+} */
 
 body {
     padding: 0;
@@ -24,6 +24,16 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+body::after {
+    content: "2048";
+    font-size: 16rem;
+    font-family: 'Roboto Slab', serif;
+    position: absolute;
+    left: 0%;
+    transform: rotate(-90deg);
+    color: rgba(0, 0, 0, 0.1);
 }
 
 .grid {
