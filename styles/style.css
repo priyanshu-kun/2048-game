@@ -76,3 +76,8 @@ body::after {
     font-size: 1.3rem;
     text-align: center;
 }
+
+.action-animation {
+    transform: scale(1.1);
+    transition: all 0.344s ease;
+}
